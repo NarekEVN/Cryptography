@@ -1,0 +1,144 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+  background: #333;
+  color: #eee;
+}
+.container{
+  width: 70%;
+  margin: 0 auto;
+}
+header{
+  width: 100%;
+  background: #3d3d3d;
+  padding: 20px;
+  nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .menu{
+      li{
+        display: inline-block;
+        margin: 0 25px;
+        a{
+          color: #eee;
+          text-decoration: none;
+          position: relative;
+          &:after{
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            background: #718093;
+            width: 0;
+            height: 2px;
+            transition: .3s ease;
+          }
+          &:hover {
+            &:after{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .navbar_toggler{
+      background: transparent;
+      border: none;
+      display: none;
+      cursor: pointer;
+      &:focus{
+        outline: 0;
+      }
+      span{
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #eee;
+        margin: 3px 0;
+        transition: .3s ease;
+      }
+    }
+  }
+}
+
+section{
+  position: relative;
+  input{
+    width: 100%;
+    margin-top: 20%;
+    border: 1px solid #dcdde1;
+    border-radius: 35px;
+    padding: 10px 20px;
+    font-size: 25px;
+    &:focus{
+      outline: 0;
+    }
+  }
+  .step{
+    margin-top: 20px;
+  }
+  button{
+    background: #4b4b4b;
+    border: none;
+    width: 100%;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 35px;
+    margin-top: 20px;
+    color: #eee;
+    cursor: pointer;
+    &:focus{
+      outline: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 992px){
+  header{
+    nav{
+      .menu{
+        position: fixed;
+        top: 72px;
+        left: -100%;
+        width: 100%;
+        transition: .3s ease;
+        background: #3d3d3d;
+        height: calc(100% - 72px);
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        li{
+          margin: 25px 0;
+        }
+      }
+      .menu.active{
+        left: 0;
+      }
+      .navbar_toggler{
+        display: block;
+      }
+      .navbar_toggler.active{
+        span{
+          &:nth-child(1){
+            transform: translateY(7px) rotate(-45deg);
+          }
+          &:nth-child(2){
+            opacity: 0;
+          }
+          &:nth-child(3){
+            transform: translateY(-3px) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
