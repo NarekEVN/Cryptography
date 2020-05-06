@@ -142,3 +142,36 @@ section{
     }
   }
 }
+
+@media screen and (max-width: 650px){
+  header{
+    nav{
+      h1{
+        font-size: 15px;
+      }
+      .menu{
+        top: 60px;
+        height: calc(100% - 60px);
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px){
+  header{
+    nav{
+      flex-direction: row-reverse;
+      h1{
+        display: none;
+      }
+      .menu{
+        top: 58px;
+        height: calc(100% - 58px);
+      }
+    }
+  }
+  section{
+    input, button{
+      font-size: 18px;
+    }
+  }
+}

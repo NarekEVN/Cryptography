@@ -167,4 +167,33 @@ section button:focus {
             transform: translateY(-3px) rotate(45deg);
   }
 }
+
+@media screen and (max-width: 650px) {
+  header nav h1 {
+    font-size: 15px;
+  }
+  header nav .menu {
+    top: 60px;
+    height: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  header nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  header nav h1 {
+    display: none;
+  }
+  header nav .menu {
+    top: 58px;
+    height: calc(100% - 58px);
+  }
+  section input, section button {
+    font-size: 18px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
